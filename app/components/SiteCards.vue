@@ -31,7 +31,7 @@
             </n-popover>
             <!-- 跳转 -->
             <n-button
-              v-if="site?.url"
+              v-if="config.public.showLink && site?.url"
               :focusable="false"
               size="tiny"
               tertiary
@@ -152,6 +152,7 @@
 import type { SiteStatusType, SiteType } from "~~/types/main";
 
 const { t } = useI18n();
+const config = useRuntimeConfig();
 const statusStore = useStatusStore();
 
 // 站点类型
